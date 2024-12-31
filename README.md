@@ -1,34 +1,62 @@
 ![Dialy](https://i.imgur.com/7ErzpV2.png)
 
-# http://dialy.xyz
+### **Turn Phone Numbers into Two Memorable Words**  
 
-# What is Dialy?
-Dialy is a radical new take on phone numbers. Instead of having to memorize a random sequence of ten digits, phone numbers are assigned Dialys; two short words that are easy to remember. Now, instead of having to memorize all these random numbers, all you have to remember is two simple words!
+---
 
-# Why does Dialy exist?
-Dialy was heavily inspired by [What3Words](https://what3words.com/). The founders of Dialy were curious as to what in what other applications words could be used to reduce the difficulty of remembering things. Phone numbers were one of the first things that came to mind, they are hard to remember and can easily be replaced with two unique words.
+## **What is Dialy?**  
+Dialy offers a fresh approach to phone numbers. Instead of memorizing random 10-digit sequences, Dialy assigns **two short, easy-to-remember words** to each phone number. Now, remembering a phone number is as simple as recalling two words!  
 
-# How do I use it?
-Dialy's interface was designed to be as simple as possible. When users first load the site, they will be greeted with a search bar. 
+---
 
-![Dialy Home Page](https://i.imgur.com/oQAb2J8.png)
+## **Why Does Dialy Exist?**  
+Dialy was inspired by [What3Words](https://what3words.com/). Its creators explored new ways to make information easier to remember, and phone numbers quickly stood out as a prime candidate. They’re often hard to recall, but replacing them with two unique words simplifies the process dramatically.  
 
-In this search bar, you can enter either a Dialy (two words separated by a colon), or a phone number. Dialy takes advantage of Firebase's lightning fast indexing with its low latency autocomplete. If the Dialy exists in the database, users will be able to select it from the autocomplete dropdown
+---
 
-![Dialy autocomplete](https://i.imgur.com/dXEvCBE.png)
+## **How Do I Use It?**  
+Dialy was designed to be **simple and intuitive**.  
 
-The user will then be greeted with the original phone number assigned to the entered Dialy, as well as some accompanying metadata and search history
+### **Step 1:** Enter a Number or Dialy  
+- On the homepage, you’ll find a search bar:  
+  ![Dialy Home Page](https://i.imgur.com/oQAb2J8.png)  
 
-![Dialy results](https://i.imgur.com/vr7yUgH.png)
+- Enter either:  
+  - A **Dialy** (two words separated by a colon), or  
+  - A **phone number**.  
 
-Conversely, if a user enters a phone number, they will be shown the Dialy assigned to it
+- Dialy uses **Firebase-powered autocomplete** to ensure fast results.  
+  ![Dialy autocomplete](https://i.imgur.com/dXEvCBE.png)  
 
-![Dialy phone results](https://i.imgur.com/5DNUZrh.png)
+### **Step 2:** View Results  
+- If a **Dialy** is entered, you’ll see:  
+  - The **original phone number** assigned to it.  
+  - **Metadata** and **search history** associated with that number.  
+  ![Dialy results](https://i.imgur.com/vr7yUgH.png)  
 
-# How does it work?
-Dialy works by splitting all phone numbers up into two groups of 5 digits. Because of this, Dialy only supports North American phone numbers at the moment. Significant changes to the codebase would need to be made to support numbers from other countries. Dialy assigns one word to each 5 digit number, so it uses a total of 10^5 (100,000) words and assigns two words to every possible ten digit number (even if they are not valid North American phone numbers)
+- If a **phone number** is entered, you’ll see:  
+  - The **Dialy** assigned to it.  
+  ![Dialy phone results](https://i.imgur.com/5DNUZrh.png)  
 
-Dialy was created using Vanilla JS and Bootstrap. Dialy uses Firebase for storage of phone/word assignments as well as the search history of each phone number. The website itself is also hosted on Firebase (Yay for free hosting!). Dialy uses [its own api](http://api.dialy.xyz/), repository [here](https://github.com/cra1gg/dialy-api) to get accompanying phone number metadata. It acheives this using Google's [libphonenumber](https://github.com/google/libphonenumber) with a [Python wrapper](https://github.com/daviddrysdale/python-phonenumbers).
+---
 
-Dialy was developed over the Summer of 2020 by two amateur CS students. As a result, you're almost guaranteed to encounter bugs. If you do, feel free to open a detailed bug report
-##### By Cra1gg & shmkane
+## **How Does It Work?**  
+Dialy splits phone numbers into two groups of **5 digits**. Each group maps to one word, requiring **100,000 words** to cover all possibilities.  
+
+### **Current Limitations**  
+- Dialy currently supports **North American phone numbers only**.  
+- Supporting international numbers would require significant changes to the codebase.  
+
+### **Tech Stack**  
+- **Frontend:** Vanilla JavaScript + Bootstrap  
+- **Backend:** Firebase for:  
+  - Data storage (phone-to-word assignments and search history)  
+  - Hosting (free and fast!)  
+- **API:** [Dialy API](http://api.dialy.xyz/)  
+  - Repository: [GitHub](https://github.com/cra1gg/dialy-api)  
+  - Uses Google’s [libphonenumber](https://github.com/google/libphonenumber) via a [Python wrapper](https://github.com/daviddrysdale/python-phonenumbers).  
+
+---
+
+## **About the Project**  
+Dialy was developed for fun in **Summer 2020** by Cra1gg & shmkane. Bugs are possible—please report any issues you find!  
